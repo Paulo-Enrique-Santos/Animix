@@ -7,10 +7,11 @@ namespace Animix.Domain.Model.Entity
     [Table("personagem")]
     public class Character
     {
+        private Character() { }
         [Key]
-        public int IdCharacter { get; private set; }
+        public int IdCharacter { get; set; }
         public string Name { get; private set; }
-        public bool[] Image { get; private set; }
+        public byte[] Image { get; private set; }
         [ForeignKey("FkAnimation")]
         public virtual Animation Animation { get; private set; }
         [ForeignKey("FkOwner")]
@@ -18,12 +19,12 @@ namespace Animix.Domain.Model.Entity
         public virtual Marketplace? Marketplace { get; private set; }
         public virtual List<CharacterTransaction> CharacterTransactions { get; private set; }
 
-        public Character(string name, bool[] image, Animation animation, User? user, Marketplace? marketplace)
+        public Character(string name, byte[] image, Animation animation, User? user, Marketplace? marketplace)
         {
             Validation(name: name, image: image, animation: animation);
         }
 
-        public Character(int idCharacter, string name, bool[] image, Animation animation, User? user, Marketplace? marketplace, List<CharacterTransaction> characterTransactions)
+        public Character(int idCharacter, string name, byte[] image, Animation animation, User? user, Marketplace? marketplace, List<CharacterTransaction> characterTransactions)
         {
             Validation(name : name, image : image, animation : animation);
             DomainValidationException.When(idCharacter < 0, "O id deve ser informado!");
@@ -35,7 +36,7 @@ namespace Animix.Domain.Model.Entity
             CharacterTransactions = characterTransactions;
         }
 
-        public void Validation(string name, bool[] image, Animation animation)
+        public void Validation(string name, byte[] image, Animation animation)
         {
             DomainValidationException.When(string.IsNullOrEmpty(name), "O nome deve ser informado!");
             DomainValidationException.When(image == null, "A Imagem deve ser informada!");

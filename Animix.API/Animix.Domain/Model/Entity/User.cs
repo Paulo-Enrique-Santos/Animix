@@ -7,8 +7,9 @@ namespace Animix.Domain.Model.Entity
     [Table("usuario")]
     public class User
     {
+        private User() { }
         [Key]
-        public int IdUser { get; private set; }
+        public int IdUser { get; set; }
         public string Name { get; private set; }
         public string NickName { get; private set; }
         public string Email { get; private set; }

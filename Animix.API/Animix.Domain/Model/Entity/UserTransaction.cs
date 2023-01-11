@@ -8,8 +8,9 @@ namespace Animix.Domain.Model.Entity
     [Table("transacoesUsuario")]
     public class UserTransaction
     {
+        private UserTransaction() { }
         [Key]
-        public int IdUserTransaction { get; private set; }
+        public int IdUserTransaction { get; set; }
         public ETransactionType Type { get; private set; }
         public decimal Value { get; private set; }
         [ForeignKey("FkUser")]

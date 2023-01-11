@@ -1,0 +1,17 @@
+C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.Infrastructure\bin\Debug\net6.0\Animix.Infrastructure.deps.json
+C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.Infrastructure\bin\Debug\net6.0\Animix.Infrastructure.runtimeconfig.json
+C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.Infrastructure\bin\Debug\net6.0\Animix.Infrastructure.dll
+C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.Infrastructure\bin\Debug\net6.0\Animix.Infrastructure.pdb
+C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.Infrastructure\bin\Debug\net6.0\Animix.Domain.dll
+C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.Infrastructure\bin\Debug\net6.0\Animix.Domain.pdb
+C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.Infrastructure\obj\Debug\net6.0\Animix.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.Infrastructure\obj\Debug\net6.0\Animix.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.Infrastructure\obj\Debug\net6.0\Animix.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.Infrastructure\obj\Debug\net6.0\Animix.Infrastructure.AssemblyInfo.cs
+C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.Infrastructure\obj\Debug\net6.0\Animix.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.Infrastructure\obj\Debug\net6.0\Animix.Infrastructure.csproj.CopyComplete
+C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.Infrastructure\obj\Debug\net6.0\Animix.Infrastructure.dll
+C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.Infrastructure\obj\Debug\net6.0\refint\Animix.Infrastructure.dll
+C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.Infrastructure\obj\Debug\net6.0\Animix.Infrastructure.pdb
+C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.Infrastructure\obj\Debug\net6.0\Animix.Infrastructure.genruntimeconfig.cache
+C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.Infrastructure\obj\Debug\net6.0\ref\Animix.Infrastructure.dll

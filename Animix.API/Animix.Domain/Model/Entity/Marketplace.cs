@@ -7,8 +7,9 @@ namespace Animix.Domain.Model.Entity
     [Table("anuncios")]
     public class Marketplace
     {
+        private Marketplace() { }
         [Key]
-        public int IdMarketplace { get; private set; }
+        public int IdMarketplace { get; set; }
         public decimal Price { get; private set; }
         [ForeignKey("FkCharacter")]
         public virtual Character Character { get; private set; }

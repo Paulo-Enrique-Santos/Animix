@@ -7,8 +7,9 @@ namespace Animix.Domain.Model.Entity
     [Table("transacoesAnimacoes")]
     public class CharacterTransaction
     {
+        private CharacterTransaction() { }
         [Key]
-        public int IdCharacterTransaction { get; private set; }
+        public int IdCharacterTransaction { get; set; }
         public decimal Price { get; private set; }
         public User Buyer { get; private set; }
         public User Seller { get; private set; }

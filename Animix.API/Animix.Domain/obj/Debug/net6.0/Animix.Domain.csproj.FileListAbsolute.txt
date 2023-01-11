@@ -1,0 +1,14 @@
+C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.Domain\bin\Debug\net6.0\Animix.Domain.deps.json
+C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.Domain\bin\Debug\net6.0\Animix.Domain.runtimeconfig.json
+C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.Domain\bin\Debug\net6.0\Animix.Domain.dll
+C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.Domain\bin\Debug\net6.0\Animix.Domain.pdb
+C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.Domain\obj\Debug\net6.0\Animix.Domain.csproj.AssemblyReference.cache
+C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.Domain\obj\Debug\net6.0\Animix.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.Domain\obj\Debug\net6.0\Animix.Domain.AssemblyInfoInputs.cache
+C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.Domain\obj\Debug\net6.0\Animix.Domain.AssemblyInfo.cs
+C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.Domain\obj\Debug\net6.0\Animix.Domain.csproj.CoreCompileInputs.cache
+C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.Domain\obj\Debug\net6.0\Animix.Domain.dll
+C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.Domain\obj\Debug\net6.0\refint\Animix.Domain.dll
+C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.Domain\obj\Debug\net6.0\Animix.Domain.pdb
+C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.Domain\obj\Debug\net6.0\Animix.Domain.genruntimeconfig.cache
+C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.Domain\obj\Debug\net6.0\ref\Animix.Domain.dll
