@@ -8,8 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Interface\" />
-    <Folder Include="Model\Entity\" />
-    <Folder Include="Model\Enum\" />
     <Folder Include="Model\Validations\" />
     <Folder Include="Service\" />
   </ItemGroup>
