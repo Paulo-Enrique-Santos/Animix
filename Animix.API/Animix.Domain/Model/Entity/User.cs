@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Animix.Domain.Model.Entity
 {
-    [Table("Usuario")]
+    [Table("usuario")]
     public class User
     {
         [Key]
