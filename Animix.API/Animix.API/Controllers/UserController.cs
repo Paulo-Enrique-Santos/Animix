@@ -15,15 +15,26 @@ namespace Animix.API.Controllers
             _userService = userService;
         }
 
-        [HttpPost]
+        [HttpPost("/RegisterUser")]
         public async Task<ActionResult> RegisterUser([FromQuery] UserRegisterRequest request)
         {
-            var result = await _userService.RegisterUserAsync(request);
+            var response = await _userService.RegisterUserAsync(request);
 
-            if (result.IsSuccess)
-                return Ok(result.Data);
+            if (response.IsSuccess)
+                return Ok(response.Data);
 
-            return BadRequest(result.Message);
+            return BadRequest(response.Message);
+        }
+
+        [HttpGet("/LoginUser")]
+        public async Task<ActionResult> LoginUser([FromQuery] UserLoginRequest request)
+        {
+            var response = await _userService.LoginUserAsync(request);
+
+            if (response.IsSuccess)
+                return Ok(response.Data);
+
+            return BadRequest(response.Message);
         }
     }
 }
