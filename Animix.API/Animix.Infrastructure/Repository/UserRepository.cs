@@ -2,6 +2,7 @@
 using Animix.Domain.Model.Entity;
 using Animix.Domain.Model.Request;
 using Animix.Infrastructure.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace Animix.Infrastructure.Repository
 {
@@ -16,13 +17,12 @@ namespace Animix.Infrastructure.Repository
 
         public async Task<User> LoginUserAsync(UserLoginRequest userLoginRequest)
         {
-            var response = _appDbContext.User.FirstOrDefault(x => x.Email == userLoginRequest.Email && x.Password == userLoginRequest.Password);
-            return response;
+            return await _appDbContext.User.FirstOrDefaultAsync(x => x.Email == userLoginRequest.Email && x.Password == userLoginRequest.Password);
         }
 
         public async Task<User> RegisterUserAsync(User user)
         {
-            _appDbContext.Add(user);
+            _appDbContext.User.Add(user);
             await _appDbContext.SaveChangesAsync();
             return user;
         }

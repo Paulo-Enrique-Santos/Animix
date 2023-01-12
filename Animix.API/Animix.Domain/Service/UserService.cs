@@ -20,11 +20,6 @@ namespace Animix.Domain.Service
             if (request == null)
                 return ResultService.Fail<UserResponse>("Os dados do login deve ser informado!");
 
-            var validation = new UserLoginRequestValidation().Validate(request);
-
-            if (!validation.IsValid)
-                return ResultService.RequestError<UserResponse>("Problemas para fazer o login\n", validation);
-
             var login = await _userRepostiory.LoginUserAsync(request);
 
             if (login == null)
@@ -40,14 +35,12 @@ namespace Animix.Domain.Service
             if (request == null)
                 return ResultService.Fail<UserResponse>("Os dados do usuario deve ser informado!");
 
-            var validation = new UserRegisterRequestValidation().Validate(request);
-
-            if (!validation.IsValid)
-                return ResultService.RequestError<UserResponse>("Problemas para fazer o cadastro\n", validation);
-
             var user = new User(request.Name, request.NickName, request.Email, request.Password);
 
             var register = await _userRepostiory.RegisterUserAsync(user);
+
+            if (register == null)
+                return ResultService.Fail<UserResponse>("Problemas para efetuar o cadastro!");
 
             var response = new UserResponse(register.IdUser, register.Name);
 

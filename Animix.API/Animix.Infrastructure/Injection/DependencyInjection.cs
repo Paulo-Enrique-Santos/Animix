@@ -17,6 +17,7 @@ namespace Animix.Infrastructure.Injection
                 options.UseSqlite(configuration.GetConnectionString("ConnectionSqlite")));
 
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IAnimationRepository, AnimationRepository>();
 
             return services;
         }
@@ -24,6 +25,8 @@ namespace Animix.Infrastructure.Injection
         public static IServiceCollection AddServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IAnimationService, AnimationService>();
+
             return services;
         }
     }

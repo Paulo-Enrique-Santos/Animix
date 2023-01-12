@@ -1,6 +1,7 @@
 ﻿using Animix.Domain.Interface.Repository;
 using Animix.Domain.Model.Entity;
 using Animix.Infrastructure.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace Animix.Infrastructure.Repository
 {
@@ -15,25 +16,32 @@ namespace Animix.Infrastructure.Repository
 
         public async Task<Animation> CreateAnimationAsync(Animation animation)
         {
-
+            _appDbContext.Animation.Add(animation);
+            await _appDbContext.SaveChangesAsync();
+            return animation;
         }
 
-        public async Task<string> DeleteAnimationAsync(int idAnimation)
+        public async Task<Animation> DeleteAnimationAsync(int idAnimation)
         {
-            throw new NotImplementedException();
+            var animation = await GetAnimationByIdAsync(idAnimation);
+
+            _appDbContext.Animation.Remove(animation);
+            await _appDbContext.SaveChangesAsync();
+
+            return animation;
         }
 
         public async Task<List<Animation>> GetAllAnimationsAsync()
         {
-            throw new NotImplementedException();
+            return await _appDbContext.Animation.ToListAsync();
         }
 
         public async Task<Animation> GetAnimationByIdAsync(int idAnimation)
         {
-            throw new NotImplementedException();
+            return await _appDbContext.Animation.FirstOrDefaultAsync(x => x.IdAnimation == idAnimation);
         }
 
-        public async Task<Animation> UpdateAnimationAsync(int idAnimation)
+        public async Task<Animation> UpdateAnimationAsync(Animation animation)
         {
             throw new NotImplementedException();
         }

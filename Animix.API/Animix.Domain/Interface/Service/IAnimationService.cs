@@ -1,13 +1,15 @@
 ﻿using Animix.Domain.Model.Entity;
+using Animix.Domain.Model.Request;
+using Animix.Domain.Service;
 
 namespace Animix.Domain.Interface.Service
 {
     public interface IAnimationService
     {
-        Task<Animation> CreateAnimationAsync(Animation animation);
-        Task<List<Animation>> GetAllAnimationsAsync();
-        Task<Animation> GetAnimationByIdAsync(int idAnimation);
-        Task<Animation> UpdateAnimationAsync(int idAnimation);
-        Task<string> DeleteAnimationAsync(int idAnimation);
+        Task<ResultService<Animation>> CreateAnimationAsync(AnimationCreateRequest request);
+        Task<ResultService<List<Animation>>> GetAllAnimationsAsync();
+        Task<ResultService<Animation>> GetAnimationByIdAsync(int idAnimation);
+        Task<ResultService<Animation>> UpdateAnimationAsync(int idAnimation);
+        Task<ResultService<string>> DeleteAnimationAsync(int idAnimation);
     }
 }
