@@ -5,6 +5,7 @@ C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.API\bin\Debug\
 C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.API\bin\Debug\net6.0\Animix.API.runtimeconfig.json
 C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.API\bin\Debug\net6.0\Animix.API.dll
 C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.API\bin\Debug\net6.0\Animix.API.pdb
+C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.API\bin\Debug\net6.0\FluentValidation.dll
 C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.API\bin\Debug\net6.0\Humanizer.dll
 C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.API\bin\Debug\net6.0\Microsoft.Data.Sqlite.dll
 C:\Users\paulo.filho\Desktop\Individuais\Animix\Animix.API\Animix.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll

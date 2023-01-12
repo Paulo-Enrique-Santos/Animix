@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "LbYv6mfRWMFhElGWBfBLPW7bNRir6OMnj569rcPgRVvGgGFUchFnk+e7TY/3VLDyXC6e0e3q4HH+nU2STGdJsg==",
+  "dgSpecHash": "lbvFJMsBdlDzBishz0yGc7lwKahK/AEzBwnZ8vulgZHn0IKsTdn2zo8VCfMC1q5i+P1uE91jOsstIMt8ScREyg==",
   "success": true,
   "projectFilePath": "C:\\Users\\paulo.filho\\Desktop\\Individuais\\Animix\\Animix.API\\Animix.API\\Animix.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\paulo.filho\\.nuget\\packages\\fluentvalidation\\11.4.0\\fluentvalidation.11.4.0.nupkg.sha512",
     "C:\\Users\\paulo.filho\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\paulo.filho\\.nuget\\packages\\microsoft.data.sqlite.core\\6.0.12\\microsoft.data.sqlite.core.6.0.12.nupkg.sha512",
     "C:\\Users\\paulo.filho\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.12\\microsoft.entityframeworkcore.6.0.12.nupkg.sha512",

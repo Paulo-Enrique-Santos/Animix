@@ -17,13 +17,11 @@ namespace Animix.Domain.Model.Entity
         public decimal Balance { get; private set; }
         public virtual List<UserTransaction> UserTransactions { get; private set; }
 
-        //CRIAR USUÁRIO DO ZERO
         public User(string name, string nickName, string email, string password)
         {
             Validation(name : name, nickName : nickName, email : email, password : password);
         }
 
-        //EDITAR ALGUM PARÂMETRO
         public User(int idUser, string name, string nickName, string email, string password, decimal balance, List<UserTransaction> userTransactions)
         {
             Validation(name: name, nickName: nickName, email: email, password: password);

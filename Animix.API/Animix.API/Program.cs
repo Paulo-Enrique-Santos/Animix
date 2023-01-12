@@ -1,5 +1,4 @@
-using Animix.Infrastructure.Context;
-using Microsoft.EntityFrameworkCore;
+using Animix.Infrastructure.Injection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,8 +8,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("ConnectionSqlite")));
+builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddServices(builder.Configuration);
 
 var app = builder.Build();
 
