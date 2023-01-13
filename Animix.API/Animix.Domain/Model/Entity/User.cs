@@ -10,28 +10,16 @@ namespace Animix.Domain.Model.Entity
         private User() { }
         [Key]
         public int IdUser { get; set; }
-        public string Name { get; private set; }
-        public string NickName { get; private set; }
-        public string Email { get; private set; }
-        public string Password { get; private set; }
-        public decimal Balance { get; private set; }
+        public string Name { get; set; }
+        public string NickName { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public decimal Balance { get; set; }
         public virtual List<UserTransaction> UserTransactions { get; private set; }
 
         public User(string name, string nickName, string email, string password)
         {
             Validation(name : name, nickName : nickName, email : email, password : password);
-        }
-
-        public User(int idUser, string name, string nickName, string email, string password, decimal balance, List<UserTransaction> userTransactions)
-        {
-            Validation(name: name, nickName: nickName, email: email, password: password);
-            DomainValidationException.When(idUser < 0, "O Id do usuário deve ser informado");
-            DomainValidationException.When(balance < 0, "O saldo da conta deve ser informado");
-            DomainValidationException.When(userTransactions == null, "A lista de transações deve ser informada");
-
-            IdUser = idUser;
-            Balance = balance;
-            UserTransactions = userTransactions;
         }
 
         private void Validation(string name, string nickName, string email, string password)

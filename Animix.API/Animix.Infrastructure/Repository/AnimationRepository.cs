@@ -43,7 +43,9 @@ namespace Animix.Infrastructure.Repository
 
         public async Task<Animation> UpdateAnimationAsync(Animation animation)
         {
-            throw new NotImplementedException();
+            _appDbContext.Animation.Update(animation);
+            await _appDbContext.SaveChangesAsync();
+            return animation;
         }
     }
 }

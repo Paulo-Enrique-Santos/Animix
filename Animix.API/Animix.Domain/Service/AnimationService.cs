@@ -17,23 +17,26 @@ namespace Animix.Domain.Service
         public async Task<ResultService<Animation>> CreateAnimationAsync(AnimationCreateRequest request)
         {
             if (request == null)
-                ResultService.Fail<Animation>("O objeto deve ser informado!");
+                return ResultService.Fail<Animation>("O objeto deve ser informado!");
 
             await using var convertImage = new MemoryStream();
             await request.Image.CopyToAsync(convertImage);
 
             var animation = new Animation(request.Name, request.Description, convertImage.ToArray());
 
-            var response = await _animationRepository.CreateAnimationAsync(animation);
+            var animationCreated = await _animationRepository.CreateAnimationAsync(animation);
 
-            return ResultService.Ok<Animation>(response);
+            if (animationCreated == null)
+                return ResultService.Fail<Animation>("Problemas para criar a animação!");
+
+            return ResultService.Ok<Animation>(animationCreated);
         }
 
         public async Task<ResultService<string>> DeleteAnimationAsync(int idAnimation)
         {
-            var animation = await _animationRepository.DeleteAnimationAsync(idAnimation);
+            var animationDeleted = await _animationRepository.DeleteAnimationAsync(idAnimation);
 
-            if (animation == null)
+            if (animationDeleted == null)
                 return ResultService.Fail<string>("Problemas para deletar a animação!");
 
             return ResultService.Ok<string>("Animação deletada com sucesso!");
@@ -59,9 +62,26 @@ namespace Animix.Domain.Service
             return ResultService.Ok<Animation>(animation);
         }
 
-        public async Task<ResultService<Animation>> UpdateAnimationAsync(int idAnimation)
+        public async Task<ResultService<Animation>> UpdateAnimationAsync(AnimationEditRequest request)
         {
-            throw new NotImplementedException();
+            if (request == null)
+                return ResultService.Fail<Animation>("O objeto deve ser informado!");
+
+            var animation = await GetAnimationByIdAsync(request.Id);
+
+            await using var convertImage = new MemoryStream();
+            await request.Image.CopyToAsync(convertImage);
+
+            animation.Data.Name = request.Name;
+            animation.Data.Description = request.Description;
+            animation.Data.Image = convertImage.ToArray();
+
+            var animationUpdated = await _animationRepository.UpdateAnimationAsync(animation.Data);
+
+            if (animationUpdated == null)
+                return ResultService.Fail<Animation>("Problemas para editar a Animação!");
+
+            return ResultService.Ok<Animation>(animationUpdated);
         }
     }
 }

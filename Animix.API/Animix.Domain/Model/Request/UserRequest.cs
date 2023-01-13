@@ -1,7 +1,11 @@
-﻿using FluentValidation;
-
-namespace Animix.Domain.Model.Request
+﻿namespace Animix.Domain.Model.Request
 {
+    public class UserLoginRequest
+    {
+        public string Email { get; set; }
+        public string Password { get; set; }
+    }
+
     public class UserRegisterRequest
     {
         public string Name { get; set; }

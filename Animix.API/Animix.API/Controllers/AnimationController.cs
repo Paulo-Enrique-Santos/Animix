@@ -51,6 +51,18 @@ namespace Animix.API.Controllers
         public async Task<ActionResult> GetByIdAsync(int idAnimation)
         {
             var response = await _animationService.GetAnimationByIdAsync(idAnimation);
+
+            if (response.IsSuccess)
+                return Ok(response.Data);
+
+            return BadRequest(response.Message);
+        }
+
+        [HttpPatch("/Editar")]
+        public async Task<ActionResult> EditAsync([FromQuery] AnimationEditRequest request)
+        {
+            var response = await _animationService.UpdateAnimationAsync(request);
+
             if (response.IsSuccess)
                 return Ok(response.Data);
 

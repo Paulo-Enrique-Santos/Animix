@@ -9,7 +9,7 @@ namespace Animix.Domain.Interface.Service
         Task<ResultService<Animation>> CreateAnimationAsync(AnimationCreateRequest request);
         Task<ResultService<List<Animation>>> GetAllAnimationsAsync();
         Task<ResultService<Animation>> GetAnimationByIdAsync(int idAnimation);
-        Task<ResultService<Animation>> UpdateAnimationAsync(int idAnimation);
+        Task<ResultService<Animation>> UpdateAnimationAsync(AnimationEditRequest request);
         Task<ResultService<string>> DeleteAnimationAsync(int idAnimation);
     }
 }

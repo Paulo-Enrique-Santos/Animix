@@ -10,24 +10,14 @@ namespace Animix.Domain.Model.Entity
         private Animation() { }
         [Key]
         public int IdAnimation { get; set; }
-        public string Name { get; private set; }
-        public string Description { get; private set; }
-        public byte[] Image { get; private set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public byte[] Image { get; set; }
         public virtual List<Character> Characters { get; private set; }
 
         public Animation(string name, string description, byte[] image)
         {
             Validation(name: name, description: description, image: image);
-        }
-
-        public Animation(int idAnimation, string name, string description, byte[] image, List<Character> characters)
-        {
-            Validation(name : name, description : description, image : image);
-            DomainValidationException.When(idAnimation < 0, "O id deve ser informado!");
-            DomainValidationException.When(characters == null, "A lista de personagens deve ser informada!");
-
-            IdAnimation = idAnimation;
-            Characters = characters;
         }
 
         public void Validation(string name, string description, byte[] image)

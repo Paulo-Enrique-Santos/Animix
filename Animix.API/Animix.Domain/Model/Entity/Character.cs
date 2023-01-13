@@ -28,12 +28,12 @@ namespace Animix.Domain.Model.Entity
         {
             Validation(name : name, image : image, animation : animation);
             DomainValidationException.When(idCharacter < 0, "O id deve ser informado!");
-            DomainValidationException.When(characterTransactions == null, "A Lista de transações deve ser informada!");
 
             IdCharacter = idCharacter;
             User = user;
             Marketplace = marketplace;
-            CharacterTransactions = characterTransactions;
+            if (characterTransactions != null)
+                CharacterTransactions = characterTransactions;
         }
 
         public void Validation(string name, byte[] image, Animation animation)

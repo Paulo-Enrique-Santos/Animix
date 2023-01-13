@@ -14,7 +14,7 @@ namespace Animix.Domain.Model.Entity
         public User Buyer { get; private set; }
         public User Seller { get; private set; }
         [ForeignKey("FkCharacter")]
-        public virtual Character Character { get; set; }
+        public virtual Character Character { get; private set; }
 
         public CharacterTransaction (decimal price, User buyer, User seller, Character character)
         {
