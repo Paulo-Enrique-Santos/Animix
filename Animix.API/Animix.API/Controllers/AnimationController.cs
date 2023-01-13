@@ -1,6 +1,7 @@
 ﻿using Animix.Domain.Interface.Service;
 using Animix.Domain.Model.Request;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Mime;
 
 namespace Animix.API.Controllers
 {
@@ -16,7 +17,7 @@ namespace Animix.API.Controllers
         }
 
         [HttpPost("/CriarAnimacao")]
-        public async Task<ActionResult> CreateAnimationAsync([FromQuery]AnimationCreateRequest request)
+        public async Task<ActionResult> CreateAnimationAsync([FromQuery] AnimationCreateRequest request)
         {
             var response = await _animationService.CreateAnimationAsync(request);
 
@@ -31,6 +32,25 @@ namespace Animix.API.Controllers
         {
             var response = await _animationService.DeleteAnimationAsync(idAnimation);
 
+            if (response.IsSuccess)
+                return Ok(response.Data);
+
+            return BadRequest(response.Message);
+        }
+
+        [HttpGet("/DownloadImage")]
+        public async Task<IActionResult> DownloadImageAsync(int idAnimation)
+        {
+            var response = await _animationService.GetAnimationByIdAsync(idAnimation);
+            var file = new FileContentResult(response.Data.Image, MediaTypeNames.Application.Pdf);
+            file.FileDownloadName = response.Data.Name + ".png";
+            return file;
+        }
+
+        [HttpGet("/BuscarPorId")]
+        public async Task<ActionResult> GetByIdAsync(int idAnimation)
+        {
+            var response = await _animationService.GetAnimationByIdAsync(idAnimation);
             if (response.IsSuccess)
                 return Ok(response.Data);
 

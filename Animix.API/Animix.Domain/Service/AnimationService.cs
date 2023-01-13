@@ -19,7 +19,10 @@ namespace Animix.Domain.Service
             if (request == null)
                 ResultService.Fail<Animation>("O objeto deve ser informado!");
 
-            var animation = new Animation(request.Name, request.Description, request.Image);
+            await using var convertImage = new MemoryStream();
+            await request.Image.CopyToAsync(convertImage);
+
+            var animation = new Animation(request.Name, request.Description, convertImage.ToArray());
 
             var response = await _animationRepository.CreateAnimationAsync(animation);
 

@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "lbvFJMsBdlDzBishz0yGc7lwKahK/AEzBwnZ8vulgZHn0IKsTdn2zo8VCfMC1q5i+P1uE91jOsstIMt8ScREyg==",
+  "dgSpecHash": "L5f6UA4pYJQCd9a5PbOk0RK4YIQaHuBcCmtb0xE3gFTf4K3BC+roxkc9XbvjCTuDFcNSMoASoSIfZM4MlXuL2w==",
   "success": true,
   "projectFilePath": "C:\\Users\\paulo.filho\\Desktop\\Individuais\\Animix\\Animix.API\\Animix.API\\Animix.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\paulo.filho\\.nuget\\packages\\fluentvalidation\\11.4.0\\fluentvalidation.11.4.0.nupkg.sha512",
     "C:\\Users\\paulo.filho\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\paulo.filho\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
     "C:\\Users\\paulo.filho\\.nuget\\packages\\microsoft.data.sqlite.core\\6.0.12\\microsoft.data.sqlite.core.6.0.12.nupkg.sha512",
     "C:\\Users\\paulo.filho\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.12\\microsoft.entityframeworkcore.6.0.12.nupkg.sha512",
     "C:\\Users\\paulo.filho\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.12\\microsoft.entityframeworkcore.abstractions.6.0.12.nupkg.sha512",
@@ -38,6 +39,7 @@
     "C:\\Users\\paulo.filho\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\paulo.filho\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\paulo.filho\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
+    "C:\\Users\\paulo.filho\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512",
     "C:\\Users\\paulo.filho\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\paulo.filho\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\paulo.filho\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
