@@ -10,16 +10,16 @@ namespace Animix.Domain.Model.Entity
         private Character() { }
         [Key]
         public int IdCharacter { get; set; }
-        public string Name { get; private set; }
-        public byte[] Image { get; private set; }
+        public string Name { get; set; }
+        public byte[] Image { get; set; }
         [ForeignKey("FkAnimation")]
-        public virtual Animation Animation { get; private set; }
+        public virtual Animation Animation { get; set; }
         [ForeignKey("FkOwner")]
-        public virtual User? User { get; private set; }
-        public virtual Marketplace? Marketplace { get; private set; }
+        public virtual User? User { get; set; }
+        public virtual Marketplace? Marketplace { get; set; }
         public virtual List<CharacterTransaction> CharacterTransactions { get; private set; }
 
-        public Character(string name, byte[] image, Animation animation, User? user, Marketplace? marketplace)
+        public Character(string name, byte[] image, Animation animation)
         {
             Validation(name: name, image: image, animation: animation);
         }

@@ -15,14 +15,16 @@ namespace Animix.Domain.Service
             _userRepostiory = userRepostiory;
         }
 
-        public async Task<ResultService<User>> GetUserByIdAsync(int idUser)
+        public async Task<ResultService<UserResponse>> GetUserByIdAsync(int idUser)
         {
             var user = await _userRepostiory.GetUserByIdAsync(idUser);
 
             if (user == null)
-                return ResultService.Fail<User>("Nenhum usuário foi encotrado com esse id!");
+                return ResultService.Fail<UserResponse>("Nenhum usuário foi encotrado com esse id!");
 
-            return ResultService.Ok<User>(user);
+            var response = new UserResponse(user.IdUser, user.Name);
+
+            return ResultService.Ok<UserResponse>(response);
         }
 
         public async Task<ResultService<UserResponse>> LoginUserAsync(UserLoginRequest request)
@@ -57,21 +59,23 @@ namespace Animix.Domain.Service
             return ResultService.Ok<UserResponse>(response);
         }
 
-        public async Task<ResultService<string>> UpdatePasswordAsync(UserForgotPasswordRequest request)
+        public async Task<ResultService<UserResponse>> UpdatePasswordAsync(UserForgotPasswordRequest request)
         {
             if (request == null)
-                return ResultService.Fail<string>("Os Dados devem ser informados!");
+                return ResultService.Fail<UserResponse>("Os Dados devem ser informados!");
 
-            var user = await GetUserByIdAsync(request.IdUser);
+            var user = await _userRepostiory.GetUserByIdAsync(request.IdUser);
 
-            user.Data.Password = request.Password;
+            user.Password = request.Password;
 
-            var response = await _userRepostiory.UpdatePasswordAsync(user.Data);
+            var userUpdated = await _userRepostiory.UpdatePasswordAsync(user);
 
-            if (response == null)
-                ResultService.Fail<string>("Problemas para redefinir a senha!");
+            if (userUpdated == null)
+                ResultService.Fail<UserResponse>("Problemas para redefinir a senha!");
 
-            return ResultService.Ok<string>("Senha redefinida com sucesso!");
+            var response = new UserResponse(userUpdated.IdUser, userUpdated.Name);
+
+            return ResultService.Ok<UserResponse>(response);
         }
     }
 }

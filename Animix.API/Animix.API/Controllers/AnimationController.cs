@@ -5,7 +5,7 @@ using System.Net.Mime;
 
 namespace Animix.API.Controllers
 {
-    [Route("api/Animation")]
+    [Route("api/Animacao")]
     [ApiController]
     public class AnimationController : ControllerBase
     {
@@ -33,12 +33,12 @@ namespace Animix.API.Controllers
             var response = await _animationService.DeleteAnimationAsync(idAnimation);
 
             if (response.IsSuccess)
-                return Ok(response.Data);
+                return Ok(response.Message);
 
             return BadRequest(response.Message);
         }
 
-        [HttpGet("/DownloadImage")]
+        [HttpGet("/DownloadImageAnimacao")]
         public async Task<IActionResult> DownloadImage(int idAnimation)
         {
             var response = await _animationService.GetAnimationByIdAsync(idAnimation);
@@ -47,7 +47,7 @@ namespace Animix.API.Controllers
             return file;
         }
 
-        [HttpGet("/BuscarPorId")]
+        [HttpGet("/BuscarAnimacaoPorId")]
         public async Task<ActionResult> GetAnimationById(int idAnimation)
         {
             var response = await _animationService.GetAnimationByIdAsync(idAnimation);
@@ -58,8 +58,8 @@ namespace Animix.API.Controllers
             return BadRequest(response.Message);
         }
 
-        [HttpPatch("/Editar")]
-        public async Task<ActionResult> UpdateAnimation([FromQuery] AnimationEditRequest request)
+        [HttpPatch("/EditarAnimacao")]
+        public async Task<ActionResult> UpdateAnimation([FromQuery] AnimationUpdateRequest request)
         {
             var response = await _animationService.UpdateAnimationAsync(request);
 

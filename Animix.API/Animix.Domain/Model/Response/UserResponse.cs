@@ -2,12 +2,12 @@
 {
     public class UserResponse
     {
-        public int Id { get; set; }
+        public int IdUser { get; set; }
         public string Name { get; set; }
 
-        public UserResponse(int id, string name)
+        public UserResponse(int idUser, string name)
         {
-            Id = id;
+            IdUser = idUser;
             Name = name;
         }
     }

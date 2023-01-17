@@ -18,6 +18,7 @@ namespace Animix.Infrastructure.Injection
 
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IAnimationRepository, AnimationRepository>();
+            services.AddScoped<ICharacterRepository, CharacterRepository>();
 
             return services;
         }
@@ -26,6 +27,7 @@ namespace Animix.Infrastructure.Injection
         {
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAnimationService, AnimationService>();
+            services.AddScoped<ICharacterService, CharacterService>();
 
             return services;
         }

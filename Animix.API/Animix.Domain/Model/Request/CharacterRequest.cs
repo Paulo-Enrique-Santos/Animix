@@ -2,18 +2,17 @@
 
 namespace Animix.Domain.Model.Request
 {
-    public class AnimationCreateRequest
+    public class CharacterCreateRequest
     {
         public string Name { get; set; }
-        public string Description { get; set; }
         public IFormFile Image { get; set; }
+        public int IdAnimation { get; set; }
     }
 
-    public class AnimationUpdateRequest
+    public class CharacterUpdateRequest
     {
-        public int Id { get; set; }
+        public int IdCharacter { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
         public IFormFile Image { get; set; }
     }
 }
