@@ -6,6 +6,12 @@
         public string Password { get; set; }
     }
 
+    public class UserForgotPasswordRequest
+    {
+        public int IdUser { get; set; }
+        public string Password { get; set; }
+    }
+
     public class UserRegisterRequest
     {
         public string Name { get; set; }

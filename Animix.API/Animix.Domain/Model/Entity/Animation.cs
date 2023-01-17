@@ -13,7 +13,7 @@ namespace Animix.Domain.Model.Entity
         public string Name { get; set; }
         public string Description { get; set; }
         public byte[] Image { get; set; }
-        public virtual List<Character> Characters { get; private set; }
+        public virtual List<Character> Characters { get; set; }
 
         public Animation(string name, string description, byte[] image)
         {

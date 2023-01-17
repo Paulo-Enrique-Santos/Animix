@@ -9,5 +9,7 @@ namespace Animix.Domain.Interface.Service
     {
         Task<ResultService<UserResponse>> RegisterUserAsync(UserRegisterRequest request);
         Task<ResultService<UserResponse>> LoginUserAsync(UserLoginRequest request);
+        Task<ResultService<string>> UpdatePasswordAsync(UserForgotPasswordRequest request);
+        Task<ResultService<User>> GetUserByIdAsync(int idUser);
     }
 }

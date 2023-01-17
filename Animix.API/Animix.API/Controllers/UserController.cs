@@ -36,5 +36,16 @@ namespace Animix.API.Controllers
 
             return BadRequest(response.Message);
         }
+
+        [HttpPatch("/RedefinirSenha")]
+        public async Task<ActionResult> ForgotPassword([FromQuery] UserForgotPasswordRequest request)
+        {
+            var response = await _userService.UpdatePasswordAsync(request);
+
+            if (response.IsSuccess)
+                return Ok(response.Data);
+
+            return BadRequest(response.Message);
+        }
     }
 }

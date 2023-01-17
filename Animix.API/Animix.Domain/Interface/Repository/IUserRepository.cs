@@ -7,5 +7,9 @@ namespace Animix.Domain.Interface.Repository
     {
         Task<User> RegisterUserAsync(User user);
         Task<User> LoginUserAsync(UserLoginRequest request);
+
+        Task<User> GetUserByIdAsync(int idUser);
+
+        Task<User> UpdatePasswordAsync(User user);
     }
 }

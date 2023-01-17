@@ -17,7 +17,7 @@ namespace Animix.API.Controllers
         }
 
         [HttpPost("/CriarAnimacao")]
-        public async Task<ActionResult> CreateAnimationAsync([FromQuery] AnimationCreateRequest request)
+        public async Task<ActionResult> CreateAnimation([FromQuery] AnimationCreateRequest request)
         {
             var response = await _animationService.CreateAnimationAsync(request);
 
@@ -28,7 +28,7 @@ namespace Animix.API.Controllers
         }
 
         [HttpDelete("/DeletarAnimacao")]
-        public async Task<ActionResult> DeleteAnimationAsync([FromQuery] int idAnimation)
+        public async Task<ActionResult> DeleteAnimation(int idAnimation)
         {
             var response = await _animationService.DeleteAnimationAsync(idAnimation);
 
@@ -39,7 +39,7 @@ namespace Animix.API.Controllers
         }
 
         [HttpGet("/DownloadImage")]
-        public async Task<IActionResult> DownloadImageAsync(int idAnimation)
+        public async Task<IActionResult> DownloadImage(int idAnimation)
         {
             var response = await _animationService.GetAnimationByIdAsync(idAnimation);
             var file = new FileContentResult(response.Data.Image, MediaTypeNames.Application.Pdf);
@@ -48,7 +48,7 @@ namespace Animix.API.Controllers
         }
 
         [HttpGet("/BuscarPorId")]
-        public async Task<ActionResult> GetByIdAsync(int idAnimation)
+        public async Task<ActionResult> GetAnimationById(int idAnimation)
         {
             var response = await _animationService.GetAnimationByIdAsync(idAnimation);
 
@@ -59,7 +59,7 @@ namespace Animix.API.Controllers
         }
 
         [HttpPatch("/Editar")]
-        public async Task<ActionResult> EditAsync([FromQuery] AnimationEditRequest request)
+        public async Task<ActionResult> UpdateAnimation([FromQuery] AnimationEditRequest request)
         {
             var response = await _animationService.UpdateAnimationAsync(request);
 
