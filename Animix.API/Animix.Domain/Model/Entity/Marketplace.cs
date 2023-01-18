@@ -12,7 +12,7 @@ namespace Animix.Domain.Model.Entity
         public int IdMarketplace { get; set; }
         public decimal Price { get; set; }
         [ForeignKey("FkCharacter")]
-        public virtual Character Character { get; private set; }
+        public virtual Character Character { get; set; }
 
         public Marketplace(decimal price, Character character)
         {

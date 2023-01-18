@@ -15,7 +15,7 @@ namespace Animix.Domain.Model.Entity
         public string Email { get; set; }
         public string Password { get; set; }
         public decimal Balance { get; set; }
-        public virtual List<UserTransaction> UserTransactions { get; private set; }
+        public virtual List<UserTransaction> UserTransactions { get; set; }
 
         public User(string name, string nickName, string email, string password)
         {

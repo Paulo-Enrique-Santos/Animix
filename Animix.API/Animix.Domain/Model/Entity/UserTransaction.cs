@@ -11,10 +11,10 @@ namespace Animix.Domain.Model.Entity
         private UserTransaction() { }
         [Key]
         public int IdUserTransaction { get; set; }
-        public ETransactionType Type { get; private set; }
-        public decimal Value { get; private set; }
+        public ETransactionType Type { get; set; }
+        public decimal Value { get; set; }
         [ForeignKey("FkUser")]
-        public virtual User User { get; private set; }
+        public virtual User User { get; set; }
 
         public UserTransaction(ETransactionType type, decimal value, User user)
         {
