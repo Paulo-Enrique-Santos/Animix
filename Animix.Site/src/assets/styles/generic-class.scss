@@ -1,0 +1,10 @@
+.container {
+    width: 90vw;
+    flex-grow: 1;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

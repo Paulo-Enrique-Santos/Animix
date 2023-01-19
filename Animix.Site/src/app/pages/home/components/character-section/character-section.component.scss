@@ -1,0 +1,51 @@
+$section-height: 110vh;
+
+.character {
+    height: $section-height;
+    width: 100%;
+
+    display: flex;
+
+    &-background {
+        width: 100%;
+        height: $section-height;
+
+        display: flex;
+        flex-direction: column;
+        
+        position: absolute;
+
+        .top-wave {
+            width: 100%;
+
+            transform: scale(1, -1);
+        }
+
+        .bottom-wave {
+            width: 100%;
+
+            transform: scale(-1, 1);
+        }
+
+        .center {
+            flex-grow: 1;
+        }
+    }
+
+    &-image {
+        width: 50%;
+
+        overflow: hidden;
+
+        display: flex;
+        justify-content: end;
+
+        background-image: url("../../../../../assets/images/animation/toy-story-animation.png");
+        background-position: bottom;
+        background-size: cover;
+    }
+
+    &-description {
+        width: 50%;
+    }
+}

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { ComponentsModule } from '@shared/components';
 import { MaterialModule } from '@shared/material';
+import { MiniComponentsModule } from './components/mini-components/mini-components.module';
 
 @NgModule({
   imports: [
@@ -11,7 +12,8 @@ import { MaterialModule } from '@shared/material';
   ],
   exports: [
     ComponentsModule,
-    MaterialModule
+    MaterialModule,
+    MiniComponentsModule
   ]
 })
 export class SharedModule { }

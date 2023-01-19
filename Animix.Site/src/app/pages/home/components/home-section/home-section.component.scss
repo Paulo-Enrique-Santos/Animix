@@ -1,0 +1,46 @@
+$home-card-height: 300px;
+$home-card-width: 20%;
+
+.home {
+    &-section {
+        height: 110vh;
+        width: 100%;
+
+        padding-top: 15vh;
+
+        background-color: #090909;
+    }
+
+    &-card {
+        width: $home-card-width;
+        height: $home-card-height;
+
+        background-image: url("../../../../../assets/images/images/card-toy-story.webp");
+        background-size: cover;
+        background-position: center;
+
+        &::after, &::before {
+            content: "";
+            display: block;
+
+            width: 100%;
+            height: $home-card-height;
+
+            transform: scale(1,-1);
+        }
+
+        &::before {
+            margin-top: $home-card-height + 10;
+
+            background-image: url("../../../../../assets/images/images/card-toy-story.webp");
+            background-size: cover;
+            background-position: center;
+        }
+        
+        &::after {
+            margin-top: $home-card-height * -1;
+            
+            background: linear-gradient(180deg, rgba(9,9,9,1) 20%, rgb(9, 9, 9, 0.9) 60%, rgb(9, 9, 9, 0.8) 70%, rgb(9, 9, 9, 0.6) 80%, rgba(9,9,9,0.3) 100%);
+        }
+    }
+}

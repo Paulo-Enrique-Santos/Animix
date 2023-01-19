@@ -1,0 +1,31 @@
+$height-hamburguer: 35px;
+$width-hamburguer: 50px;
+$color-hamburguer: var(--text-color);
+$spacing-hamburguer: 15px;
+$border-radius-hamburguer: 10px;
+
+.box {
+    width: $width-hamburguer;
+    height: $height-hamburguer;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    transform: rotate(-30deg);
+    cursor: pointer;
+}
+
+.line {
+    height: $height-hamburguer * 0.15;
+    width: $width-hamburguer;
+
+    border-radius: $border-radius-hamburguer;
+
+    background-color: $color-hamburguer;
+
+    &.top, &.bottom {
+        width: $width-hamburguer * 0.6;
+    }
+}
