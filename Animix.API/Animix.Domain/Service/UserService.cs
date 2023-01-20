@@ -68,7 +68,7 @@ namespace Animix.Domain.Service
 
             user.Password = request.Password;
 
-            var userUpdated = await _userRepostiory.UpdatePasswordAsync(user);
+            var userUpdated = await _userRepostiory.UpdateUserAsync(user);
 
             if (userUpdated == null)
                 return ResultService.Fail<UserResponse>("Problemas para redefinir a senha!");

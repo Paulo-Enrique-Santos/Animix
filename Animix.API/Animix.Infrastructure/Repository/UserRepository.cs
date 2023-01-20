@@ -32,7 +32,7 @@ namespace Animix.Infrastructure.Repository
             return await _appDbContext.User.FirstOrDefaultAsync(x => x.IdUser == idUser);
         }
 
-        public async Task<User> UpdatePasswordAsync(User user)
+        public async Task<User> UpdateUserAsync(User user)
         {
             _appDbContext.User.Update(user);
             await _appDbContext.SaveChangesAsync();

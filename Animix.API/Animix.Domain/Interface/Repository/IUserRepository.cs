@@ -10,6 +10,6 @@ namespace Animix.Domain.Interface.Repository
 
         Task<User> GetUserByIdAsync(int idUser);
 
-        Task<User> UpdatePasswordAsync(User user);
+        Task<User> UpdateUserAsync(User user);
     }
 }

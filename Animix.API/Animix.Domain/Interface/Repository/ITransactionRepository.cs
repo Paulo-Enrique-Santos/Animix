@@ -5,10 +5,10 @@ namespace Animix.Domain.Interface.Repository
 {
     public interface ITransactionRepository
     {
-        Task<CharacterTransaction> BuyCharacterAsync(CharacterTransaction request);
-        Task<Marketplace> SetSaleCharacterAsync(Marketplace request);
-        Task<Marketplace> UpdateSaleCharacterAsync(Marketplace request);
-        Task<Marketplace> RemoveSaleCharacterAsync(int idCharacter);
-        Task<UserTransaction> SetUserTransactionAsync(UserTransaction request);
+        Task<CharacterTransaction> BuyCharacterAsync(CharacterTransaction characterTransaction);
+        Task<Marketplace> SetSaleCharacterAsync(Marketplace marketplace);
+        Task<Marketplace> UpdateSaleCharacterAsync(Marketplace marketplace);
+        Task<Marketplace> RemoveSaleCharacterAsync(Character character);
+        Task<UserTransaction> SetUserTransactionAsync(UserTransaction userTransaction);
     }
 }
