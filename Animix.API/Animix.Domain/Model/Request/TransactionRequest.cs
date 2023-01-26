@@ -8,13 +8,7 @@
         public decimal Price { get; set; }
     }
 
-    public class DepositRequest
-    {
-        public int IdUser { get; set; }
-        public int Value { get; set; }
-    }
-
-    public class WithdrawRequest
+    public class BalanceRequest
     {
         public int IdUser { get; set; }
         public int Value { get; set; }
@@ -22,7 +16,6 @@
 
     public class SaleCharacterRequest
     {
-        public int IdUser { get; set; }
         public int IdCharacter { get; set; }
         public decimal Price { get; set; }
     }

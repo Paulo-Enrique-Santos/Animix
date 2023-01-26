@@ -15,7 +15,7 @@ namespace Animix.Infrastructure.Repository
         }
 
 
-        public async Task<CharacterTransaction> BuyCharacterAsync(CharacterTransaction characterTransaction)
+        public async Task<CharacterTransaction> SetCharacterTransactionAsync(CharacterTransaction characterTransaction)
         {
             _appDbContext.CharacterTransaction.Add(characterTransaction);
             await _appDbContext.SaveChangesAsync();
@@ -50,6 +50,11 @@ namespace Animix.Infrastructure.Repository
             _appDbContext.Marketplace.Update(marketplace);
             await _appDbContext.SaveChangesAsync();
             return marketplace;
+        }
+
+        public async Task<Marketplace> GetMarketplaceByCharacterAsync(Character character)
+        {
+            return await _appDbContext.Marketplace.FirstOrDefaultAsync(x => x.Character == character);
         }
     }
 }

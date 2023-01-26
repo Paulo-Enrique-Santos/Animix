@@ -43,52 +43,104 @@ namespace Animix.Domain.Service
                 return ResultService.Fail("Saldo insuficiente para concluir a compra!");
 
             var characterTransaction = new CharacterTransaction(request.Price, buyer, seller, character);
-
-            await _transactionRepository.BuyCharacterAsync(characterTransaction);
+            await _transactionRepository.SetCharacterTransactionAsync(characterTransaction);
 
             var buyerTransaction = new UserTransaction(ETransactionType.PURCHASE, request.Price * -1, buyer);
-
             await _transactionRepository.SetUserTransactionAsync(buyerTransaction);
 
             var sellerTransaction = new UserTransaction(ETransactionType.SALE, request.Price, seller);
-
             await _transactionRepository.SetUserTransactionAsync(sellerTransaction);
 
             buyer.Balance -= request.Price;
-
             await _userRepository.UpdateUserAsync(buyer);
 
             seller.Balance += request.Price;
-
             await _userRepository.UpdateUserAsync(seller);
 
-            await _transactionRepository.RemoveSaleCharacterAsync(character);
-
             character.User = buyer;
-
             await _characterRepository.UpdateCharacterAsync(character);
+
+            await _transactionRepository.RemoveSaleCharacterAsync(character);
 
             return ResultService.Ok("Transação concluida com sucesso!");
         }
 
-        public async Task<ResultService<decimal>> DepositValueAsync(DepositRequest request)
+        public async Task<ResultService<decimal>> DepositValueAsync(BalanceRequest request)
         {
-            throw new NotImplementedException();
+            if (request == null)
+                return ResultService.Fail<decimal>("O Objeto deve ser informado!");
+
+            var user = await _userRepository.GetUserByIdAsync(request.IdUser);
+
+            if (user == null)
+                return ResultService.Fail<decimal>("Usuário não encontrado!");
+
+            var userTransaction = new UserTransaction(ETransactionType.DEPOSIT, request.Value, user);
+            await _transactionRepository.SetUserTransactionAsync(userTransaction);
+
+            user.Balance += request.Value;
+            var response = await _userRepository.UpdateUserAsync(user);
+
+            return ResultService.Ok<decimal>(response.Balance);
         }
 
         public async Task<ResultService> SaleCharacterAsync(SaleCharacterRequest request)
         {
-            throw new NotImplementedException();
+            if (request == null)
+                return ResultService.Fail("O Objeto deve ser informado!");
+
+            var character = await _characterRepository.GetCharacterByIdAsync(request.IdCharacter);
+
+            if (character == null)
+                return ResultService.Fail("Personagem não encontrado!");
+
+            var ad = new Marketplace(request.Price, character);
+            await _transactionRepository.SetSaleCharacterAsync(ad);
+
+            return ResultService.Ok("Seu personagem foi colocado a venda!");
         }
 
         public async Task<ResultService> UpdateSalePriceAsync(SaleCharacterRequest request)
         {
-            throw new NotImplementedException();
+            if (request == null)
+                return ResultService.Fail("O Objeto deve ser informado!");
+
+            var character = await _characterRepository.GetCharacterByIdAsync(request.IdCharacter);
+
+            if (character == null)
+                return ResultService.Fail("Personagem não encontrado!");
+
+            var ad = await _transactionRepository.GetMarketplaceByCharacterAsync(character);
+            
+            if (ad == null)
+                return ResultService.Fail("Nenhum anúncio encontrado com esse Personagem!");
+
+            ad.Price = request.Price;
+            await _transactionRepository.UpdateSaleCharacterAsync(ad);
+
+            return ResultService.Ok("Seu personagem foi colocado a venda!");
         }
 
-        public async Task<ResultService<decimal>> WithdrawValueAsync(DepositRequest request)
+        public async Task<ResultService<decimal>> WithdrawValueAsync(BalanceRequest request)
         {
-            throw new NotImplementedException();
+            if (request == null)
+                return ResultService.Fail<decimal>("O Objeto deve ser informado!");
+
+            var user = await _userRepository.GetUserByIdAsync(request.IdUser);
+
+            if (user == null)
+                return ResultService.Fail<decimal>("Usuário não encontrado!");
+
+            if (user.Balance < request.Value)
+                return ResultService.Fail<decimal>("Saldo insuficiente para concluir o saque!");
+
+            var userTransaction = new UserTransaction(ETransactionType.WITHDRAW, request.Value, user);
+            await _transactionRepository.SetUserTransactionAsync(userTransaction);
+
+            user.Balance -= request.Value;
+            var response = await _userRepository.UpdateUserAsync(user);
+
+            return ResultService.Ok<decimal>(response.Balance);
         }
     }
 }
