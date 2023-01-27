@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MaterialModule } from '@shared/material';
-import { HeaderComponent } from '@shared/components/header';
 import { MiniComponentsModule } from '@shared/components/mini-components';
+import { HeaderComponent } from '@shared/components/header';
+import { CharacterCardComponent } from '@shared/components/character-card';
 
 const components = [
-  HeaderComponent
+  HeaderComponent,
+  CharacterCardComponent
 ];
 
 @NgModule({
