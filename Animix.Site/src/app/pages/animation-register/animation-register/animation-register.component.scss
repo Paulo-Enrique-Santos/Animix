@@ -1,0 +1,28 @@
+.animation-background {
+    width: 100%;
+    height: calc(100vh - 80px);
+
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+
+    .container {
+        background-color: blue;
+        flex-grow: 1;
+        height: 100%;
+        
+        padding: 30px 0;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    app-generic-list-card {
+        height: 100%;
+        width: 30%;
+    }
+
+    app-generic-edit-card {
+        height: 100%;
+        width: 30%;
+    }
+}

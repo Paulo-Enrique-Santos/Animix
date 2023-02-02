@@ -1,0 +1,44 @@
+.card {
+    &-background {
+        min-width: 300px;
+        height: 100%;
+
+        border-radius: 10px;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-direction: column;
+        position: relative;
+
+        .result {
+            width: 90%;
+            height: 200px;
+            border-radius: 10px;
+
+            position: absolute;
+            top: 0;
+
+            background-color: green;
+        }
+
+        .register {
+            height: 80%;
+            width: 100%;
+            border-radius: 10px;
+
+            padding-top: 20%;
+
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            background-color: purple;
+
+            app-generic-form {
+                width: 70%;
+                flex-grow: 1;
+            }
+        }
+    }
+}

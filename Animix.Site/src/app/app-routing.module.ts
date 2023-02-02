@@ -12,7 +12,6 @@ import { UserExtractComponent } from '@pages/user-extract/user-extract';
 import { UserRegisterComponent } from '@pages/user-register/user-register';
 import { UserSettingsComponent } from '@pages/user-settings/user-settings';
 import { UserTransactionsComponent } from '@pages/user-transactions/user-transactions';
-import { CharacterCardComponent } from '@shared/components/character-card';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},

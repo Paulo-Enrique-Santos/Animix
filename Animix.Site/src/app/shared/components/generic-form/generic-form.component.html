@@ -1,0 +1,12 @@
+<form action="" class="form">
+    <div class="box-input" *ngFor="let input of config.inputConfig">
+        <input type="{{ input.type }}" required id="">
+        <label for="">{{ input.label }}:</label>
+        <span class="error-message" *ngIf="input.invalidMessage">{{ input.invalidMessage }}</span>
+    </div>
+    <div class="box-button"
+    [class.center]="!config.buttonSecundary">
+        <button *ngIf="config.buttonSecundary">{{ config.buttonSecundary }}</button>
+        <button>Teste</button>
+    </div>
+</form>

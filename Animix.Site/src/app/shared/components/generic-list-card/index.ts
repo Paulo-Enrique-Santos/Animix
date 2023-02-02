@@ -1,0 +1,1 @@
+export * from './generic-list-card.component';
